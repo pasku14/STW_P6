@@ -9,6 +9,7 @@ group :production do
 	gem "haml"
 	gem "rack"
 	gem "sinatra"
+	gem "heroku"
 end
 
 group :development, :test do
