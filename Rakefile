@@ -5,10 +5,15 @@ end
 
 desc "Ejecutar Test Unitarios"
 task :test do
-  sh "ruby test/test.rb "
+  sh "ruby -Ilib -Itest test/test.rb"
 end
 
 desc "Ejecutar los Test Rspec"
 task :spec do
-	sh "rspec spec/rsack/server_spec.rb"
+	sh "rspec -Ilib -Itest --color --format documentation spec/rsack/server_spec.rb"
+end
+
+desc "Mostrar HTML"
+task :rspech do
+  sh "rspec --format html spec/rsack/server_spec.rb"
 end
